@@ -1,6 +1,10 @@
 require 'sinatra'
 
+set :session_secret, 'makers'
+enable :sessions
+
 get '/' do
-  @number = params[:number]
-  erb :index
+  @conteo = session[:conteo]
+  erb:index
+
 end
