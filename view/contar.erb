@@ -1,3 +1,5 @@
+require 'sinatra'
+
 set :session_secret, 'makers'
 enable :sessions
 
@@ -9,5 +11,11 @@ end
 
 post '/' do
   erb:contar
+  redirect '/'
+end
+
+
+get '/reset' do
+  session.clear
   redirect '/'
 end
