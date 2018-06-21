@@ -1,10 +1,11 @@
- <% if @number %>
-     <h1>Mi cuenta es : <%= @number %></h1>
-   <% else %>
-     <h1>Mi cuenta es : 0</h1>
-     <% @number = 0 %>
-   <% end %>
-   <form action="/">
-     <input type="hidden" value="<%= @number.to_i + 1 %>" name="number">
-     <input type="submit" value="submit">
-   </form>
+  <h1>Mi cuenta es :
+      <% if @conteo %>
+      <%= @conteo %>
+      <% else %>
+      <%= 0 %>
+      <% session[:conteo] = 0 %>
+      <% end %>
+  </h1>
+  <form action="/" method="post">
+      <br>
+    <input type="submit" name="enviar" value="Suma!!">
