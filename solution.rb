@@ -1,6 +1,11 @@
 require 'sinatra'
 
+
 get '/' do
-  @number = params[:number]
+  if params[:number]
+    @number = params[:number].to_i
+  else
+    @number = 0
+  end
   erb :index
 end
